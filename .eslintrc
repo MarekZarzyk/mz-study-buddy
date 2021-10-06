@@ -5,12 +5,16 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
-  "prettier/prettier": [
-    "error",
-    {
-      "endOfLine": "auto"
-    }
-  ],
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto",
+        "printWidth": 150,
+        "proseWrap": "never"
+      }
+    ]
+  },
   "plugins": ["prettier"],
   "env": {
     "browser": true,
