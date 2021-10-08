@@ -5,13 +5,20 @@ import Button from "components/atoms/button/Button";
 import AverageGrade from "components/atoms/average/AverageGrade";
 import PersonData from "components/atoms/personData/PersonData";
 
-const UsersListItem = ({ userData: { name, average, attendance = "0%" } }) => (
-  <Wrapper>
-    <AverageGrade average={average} />
-    <PersonData name={name} attendance={attendance} />
-    <Button />
-  </Wrapper>
-);
+const showIndex = (index) => console.log(`student #${index + 1}`);
+
+const UsersListItem = ({
+  userData: { name, average, attendance = "0%" },
+  deleteUser,
+}) => {
+  return (
+    <Wrapper>
+      <AverageGrade average={average} />
+      <PersonData name={name} attendance={attendance} />
+      <Button onClick={() => deleteUser(name)} />
+    </Wrapper>
+  );
+};
 
 UsersListItem.propTypes = {
   userData: PropTypes.shape({
