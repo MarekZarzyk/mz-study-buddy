@@ -6,7 +6,7 @@ export const StyledButton = styled.button`
   background-color: ${({ theme }) => theme.colors.grey};
   border-radius: 50px;
   border: none;
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   display: flex;
   justify-content: center;
   align-items: center;
