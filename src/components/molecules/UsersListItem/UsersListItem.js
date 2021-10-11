@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Wrapper } from "./UsersListItem.styles";
-import Button from "components/atoms/button/Button";
+import DeleteButton from "components/atoms/deleteButton/DeleteButton";
 import AverageGrade from "components/atoms/average/AverageGrade";
 import PersonData from "components/atoms/personData/PersonData";
-
-const showIndex = (index) => console.log(`student #${index + 1}`);
 
 const UsersListItem = ({
   userData: { name, average, attendance = "0%" },
@@ -15,7 +13,7 @@ const UsersListItem = ({
     <Wrapper>
       <AverageGrade average={average} />
       <PersonData name={name} attendance={attendance} />
-      <Button onClick={() => deleteUser(name)} />
+      <DeleteButton onClick={() => deleteUser(name)} />
     </Wrapper>
   );
 };
